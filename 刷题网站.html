@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编程网站推荐</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 30px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: center;
+        }
+
+        img {
+            margin-right: 15px;
+            border-radius: 5px;
+            vertical-align: middle;
+        }
+
+        hr {
+            display: none;
+        }
+
+        .navbar {
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-button {
+            background-color: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            p {
+                font-size: 20px;
+            }
+            
+            img {
+                width: 60px;
+                height: 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                margin: 5px 0;
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <button class="nav-button" onclick="location.href='首页.html'">首页</button>
+            <button class="nav-button" onclick="location.href='题单.html'">题单</button>
+            <button class="nav-button" onclick="location.href='刷题网站.html'">编程平台</button>
+            <button class="nav-button" onclick="location.href='比赛.html'">比赛</button>
+            <button class="nav-button" onclick="location.href='讨论.html'">讨论</button>
+        </div>
+        
+        <h1>编程平台/博客推荐</h1>
+        <ul>
+            <li><a href="https://luogu.com.cn" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://fecdn.luogu.com.cn/luogu/logo.png?0fdd294ff62e331d2f70e1a37ba4ee02" alt="洛谷" width="90" height="50"><span>洛谷</span></p></a></li>
+            <li><a href="https://vjudge.net" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://vjudge.net/static/bundle/11b24ab2156955d8f3fa.ico" height="30"/><span>vjudge</span></p></a></li>
+            <li><a href="https://atcoder.jp" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://img.atcoder.jp/assets/favicon.png" height="30"><span>Atcoder</span></p></a></li>
+            <li><a href="https://acwing.com" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://cdn.acwing.com/static/web/img/favicon.ico" height="30"><span>AcWing</span></p></a></li>
+            <li><a href="https://onlinejudge.org" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://onlinejudge.org/images/favicon.ico" height="30"><span>UVa</span></p></a></li>
+            <li><a href="https://spoj.com" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://stx1.spoj.com/gfx/favicon_new.png" height="30"><span>SPOJ</span></p></a></li>
+            <li><a href="https://usaco.training" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://usaco.training/favicon.ico" height="30">USACO</p></a></li>
+            <li><a href="https://loj.ac" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://vjudge.net/static/bundle/d319c0859f22922e76db.ico" height="30" width="30">LibreOJ</p></a></li>
+            <li><a href="https://hydro.ac/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://origin.picgo.net/2025/08/15/Hydroa27f7debab9b9c41.jpeg" width="30" height="30">Hydro</p></a></li>
+            <li><a href="https://codeforces.com" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://vjudge.net/static/bundle/9e471d950278bb99d90b.png" width="30" height="30">CodeForces</p></a></li>
+            <li><a href="https://codechef.com" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://vjudge.net/static/bundle/d730e6df854b00193b35.ico" width="30" height="30">CodeChef</p></a></li>
+            <li><a href="https://codewars.com" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://www.codewars.com/packs/assets/logo.f607a0fb.svg" width="30" height="30">CodeWars</p></a></li>
+            <li><a href="https://qduoj.com/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://origin.picgo.net/2025/08/15/QDUOJ9bc70ec6b37198b9.jpeg"  width="30" height="30">QDUOJ</p></a></li>
+            <li><a href="https://uoj.ac/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://uoj.ac/pictures/UOJ.png" width="30" height="30">Universal Online Judge</p></a></li>
+            <li><a href="https://vijos.org/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://cdn.vijos.org/favicon-96x96.png?f75bc20e13" width="30" height="30">Vijos</p></a></li>
+            <li><a href="https://topcoder.com" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://uni-nav.topcoder.com/v1/assets/logo.svg" height="30"> TopCoder<img src="https://www.topcoder.com/apple-touch-icon.png" width="30" height="30"></p></a></a></li>
+            <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://origin.picgo.net/2025/08/15/GitHub199de69a51bff49d.jpeg" width="30" height="30">GitHub</p></a></li>
+            <li><a href="https://blog.csdn.net/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://origin.picgo.net/2025/08/15/CSDN9d690939a6a74bc6.jpeg" height="30" width="30">CSDN博客</p></a></li>
+            <li><a href="https://poj.org/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://vjudge.net/static/bundle/a3a137580388fd8ebace.ico" height="30" width="30">POJ</p></a></li>
+            <li><a href="https://ac.nowcoder.com/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://vjudge.net/static/bundle/463a9d52370dc5b7ba15.jpg" height="30" width="30">牛客</p></a></li>
+            <li><a href="https://pintia.cn/problem-sets/dashboard" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://vjudge.net/static/bundle/82dd100dc5ab2a91c05a.ico" width="30" height="30">ZOJ</p></a></li></li>
+            <li><a href="https://codeforces.com/problemsets/acmsguru" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://vjudge.net/static/bundle/150071ef43ace6b8a0cf.ico" height="30"><span>SGU</span></p></a></li></li>
+            <li><a href="https://www.hackerrank.com/dashboard" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://vjudge.net/static/bundle/827e9a41ed1deb5922b5.png" height="30"><span>HackerRank</span></p></a></li></li>
+            <li><a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://origin.picgo.net/2025/08/16/IEEEc4feaeea36bb2e95.jpeg" alt="洛谷" height="50" width="90"><span>IEEE</span></p></a></li></li>
+            <li><a href="https://csacademy.com/contest/archive/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://csacademy.com/static/favicon.png" height="30"><span>CS Academy</span></p></a></li></li>
+            <li><a href="https://www.codecademy.com/" target="_blank" rel="noopener noreferrer"><p class="logo-text"><img src="https://www.codecademy.com/favicon.ico" height="30" width="30"><span>Code cademy</span></p></a></li></li>
+        </ul>
+    </div>
+</body>
+</html>
