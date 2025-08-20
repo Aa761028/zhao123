@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编程题单</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .navbar {
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-button {
+            background-color: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-button:active {
+            transform: translateY(0);
+        }
+
+        .problem-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .problem-item-container {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .problem-item-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .problem-item {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 20px;
+        }
+
+        .problem-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .problem-id {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #667eea;
+            min-width: 50px;
+        }
+
+        .problem-title {
+            flex: 1;
+            font-size: 1.1rem;
+            margin: 0 15px;
+            color: #333;
+        }
+
+        .problem-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .tag.algo {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+
+        .tag.ds {
+            background: #cce7ff;
+            color: #084298;
+        }
+
+        .tag.difficulty-easy {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+
+        .tag.difficulty-medium {
+            background: #fff3cd;
+            color: #664d03;
+        }
+
+        .tag.difficulty-hard {
+            background: #f8d7da;
+            color: #842029;
+        }
+
+        .problem-actions {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #667eea;
+            color: #667eea;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .filter-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            background-color: white;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.25);
+        }
+
+        .reset-button {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: 1px solid #667eea;
+            background: transparent;
+            color: #667eea;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .reset-button:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                margin: 5px 0;
+                width: 80%;
+            }
+            
+            .problem-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .problem-title {
+                margin: 10px 0;
+            }
+            
+            .problem-tags {
+                margin-bottom: 15px;
+            }
+            
+            .problem-actions {
+                margin-left: 0;
+                align-self: stretch;
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .problem-actions .btn {
+                flex: 1;
+                margin: 0 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <button class="nav-button" onclick="location.href='首页.html'">首页</button>
+            <button class="nav-button" onclick="location.href='题单.html'">题单</button>
+            <button class="nav-button" onclick="location.href='刷题网站.html'">编程平台</button>
+            <button class="nav-button" onclick="location.href='比赛.html'">比赛</button>
+            <button class="nav-button" onclick="location.href='讨论.html'">讨论</button>
+        </div>
+        
+        <div class="header">
+            <h1>编程题单</h1>
+            <p>精选算法练习题，提升编程技能</p>
+        </div>
+
+        <div class="card">
+            <h2>题目筛选</h2>
+            <div class="filter-section">
+                <select class="filter-select">
+                    <option>所有难度</option>
+                    <option>简单</option>
+                    <option>中等</option>
+                    <option>困难</option>
+                </select>
+                <select class="filter-select">
+                    <option>所有标签</option>
+                    <option>数组</option>
+                    <option>动态规划</option>
+                    <option>图论</option>
+                    <option>数学</option>
+                    <option>字符串</option>
+                </select>
+                <select class="filter-select">
+                    <option>所有来源</option>
+                    <option>LeetCode</option>
+                    <option>Codeforces</option>
+                    <option>洛谷</option>
+                    <option>USACO</option>
+                </select>
+                <button class="reset-button">重置筛选</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>题目列表</h2>
+            <div class="problem-list">
+                <div class="problem-item-container">
+                    <a href="problem/A+B Problem.html" target="_blank" rel="noopener noreferrer" class="problem-item">
+                        <div class="problem-content">
+                            <div class="problem-id">1</div>
+                            <div class="problem-title">A+B Problem</div>
+                            <div class="problem-tags">
+                                <span class="tag difficulty-easy">简单</span>
+                            </div>
+                            <div class="problem-actions">
+                                
+                                <button class="btn btn-outline">查看</button>
+                                <button class="btn btn-primary">练习</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="problem-item-container">
+                    <a href="problem/超级玛丽游戏.html" target="_blank" rel="noopener noreferrer" class="problem-item">
+                        <div class="problem-content">
+                            <div class="problem-id">2</div>
+                            <div class="problem-title">超级玛丽游戏</div>
+                            <div class="problem-tags">
+                                <span class="tag difficulty-easy">简单</span>
+                                <span class="tag">字符串</span>
+                            </div>
+                            <div class="problem-actions">
+                                
+                                <button class="btn btn-outline">查看</button>
+                                <button class="btn btn-primary">练习</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="problem-item-container">
+                    <a href="problem/[NOIP 2002 普及组] 过河卒.html" target="_blank" rel="noopener noreferrer" class="problem-item">
+                        <div class="problem-content">
+                            <div class="problem-id">3</div>
+                            <div class="problem-title">P1002 [NOIP 2002 普及组] 过河卒</div>
+                            <div class="problem-tags">
+                                <span class="tag difficulty-easy">普及</span>
+                                <span class="tag">动态规划</span>
+                            </div>
+                            <div class="problem-actions">
+                                
+                                <button class="btn btn-outline">查看</button>
+                                <button class="btn btn-primary">练习</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>	
+
+        <div class="card">
+            <h2>学习建议</h2>
+            <p>建议按照难度顺序练习题目，先从简单题开始，逐步挑战中等和困难题目。每道题练习后可以查看题解，理解不同的解题思路。</p>
+            <p>定期复习已练习的题目，加深对算法和数据结构的理解。</p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 编程题单. 保留所有权利.</p>
+        </div>
+    </div>
+</body>
+</html>
