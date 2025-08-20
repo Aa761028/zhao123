@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A+B Problem - 编程题单</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .problem-content {
+            line-height: 1.6;
+        }
+
+        .problem-content h3 {
+            color: #667eea;
+        }
+
+        .sample-io {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .sample-input {
+            border-left: 4px solid #28a745;
+        }
+
+        .sample-output {
+            border-left: 4px solid #007bff;
+        }
+
+        .constraints {
+            background: #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #667eea;
+            color: #667eea;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .navbar {
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-button {
+            background-color: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #764ba2;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* VSCode风格的编辑器样式 */
+        #editor-container {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #1e1e1e;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        #language-selector {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* VSCode终端样式 */
+        #terminal {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 4px;
+            height: 150px;
+            overflow-y: auto;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            display: none;
+        }
+
+        .terminal-header {
+            background-color: #333333;
+            color: #cccccc;
+            padding: 5px 10px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            font-size: 12px;
+            display: none;
+        }
+
+        .terminal-content {
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                margin: 5px 0;
+                width: 80%;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <button class="nav-button" onclick="location.href='../首页.html'">首页</button>
+            <button class="nav-button" onclick="location.href='../题单.html'">题单</button>
+            <button class="nav-button" onclick="location.href='../刷题网站.html'">编程平台</button>
+            <button class="nav-button" onclick="location.href='../竞赛.html'">竞赛</button>
+            <button class="nav-button" onclick="location.href='../讨论.html'">讨论</button>
+        </div>
+        
+        <div class="header">
+            <h1>A+B Problem</h1>
+            <p>时间限制: 1s | 内存限制: 128MB</p>
+        </div>
+
+        <div class="card">
+            <h2>题目描述</h2>
+            <div class="problem-content">
+                <p>给定两个整数 a 和 b，求它们的和。</p>
+                <p>这是一道经典的入门题目，几乎所有的编程语言都可以轻松解决。</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>输入格式</h2>
+            <div class="problem-content">
+                <p>输入包含两个整数 a 和 b，用空格分隔。</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>输出格式</h2>
+            <div class="problem-content">
+                <p>输出一个整数，表示 a 和 b 的和。</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>样例输入</h2>
+            <div class="problem-content">
+                <div class="sample-io sample-input">
+                    1 2
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>样例输出</h2>
+            <div class="problem-content">
+                <div class="sample-io sample-output">
+                    3
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>数据范围</h2>
+            <div class="problem-content">
+                <div class="constraints">
+                    <p>-10⁹ ≤ a, b ≤ 10⁹</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>提示</h2>
+            <div class="problem-content">
+                <p>注意处理可能的整数溢出问题。</p>
+                <p>不同编程语言的输入输出方式：</p>
+                <ul>
+                    <li><strong>C/C++</strong>: 使用 scanf/printf 或 cin/cout</li>
+                    <li><strong>Java</strong>: 使用 Scanner 类</li>
+                    <li><strong>Python</strong>: 使用 input() 函数</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>提交解决方案</h2>
+            <div class="problem-content">
+               
+                <div style="margin-top: 25px;">
+                    <button type="button" class="btn btn-outline" ><a href="https://www.luogu.com.cn/problem/P1001" target="_blank" rel="noopener noreferrer">提交</a></button>
+                </div>
+                <div class="terminal-header" id="terminal-header">
+                </div>
+                <div id="terminal"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 编程题单. 保留所有权利.</p>
+        </div>
+    </div>
+
+   
+    
+</body>
+
+</html>
